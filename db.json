@@ -1,0 +1,26 @@
+{
+    "users":[{
+        "id":1,
+        "firstName":"Jeyakanth",
+        "lastName":"Vedarajan",
+        "mobile":"8553572660",
+        "email":"jeyakanth92@gmail.com",
+        "place":"Bangalore"
+    },
+    {
+        "id":2,
+        "firstName":"Test",
+        "lastName":"Test 2",
+        "mobile":"8553572660",
+        "email":"jeyakanth92@gmail.com",
+        "place":"Bangalore"
+    },
+    {
+        "id":3,
+        "firstName":"Test",
+        "lastName":"Test 3",
+        "mobile":"8553572660",
+        "email":"jeyakanth92@gmail.com",
+        "place":"Bangalore"
+    }]
+}

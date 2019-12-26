@@ -1,0 +1,52 @@
+.card {
+    width:100%;
+    margin:10px 0px;
+    border-right:10px solid green;
+    .card-body {
+        padding:0px !important;
+    }
+    .user-icon{
+        width:40px;
+        height:40px;
+    }
+    .table {
+        margin:0px !important;
+        display: table;
+        tbody {
+            width:100%;
+        }
+        tr td {
+            border:none !important;
+            vertical-align: middle;
+            .icons {
+                display:inline-block;
+                margin:0px 10px;
+                cursor:pointer;
+            }
+            .edit-icon {
+                color:orange;
+            }
+            .delete-icon {
+                color:red;
+            }
+        }
+        td:nth-child(1){
+            width:10%;
+        }
+        td:nth-child(2){
+            width:20%;
+        }
+        td:nth-child(3){
+            width:20%;
+        }
+        td:nth-child(4){
+            width:20%;
+        }
+        td:nth-child(5){
+            width:20%;
+        }
+        td:nth-child(6){
+            width:10%;
+        }
+    }
+}
