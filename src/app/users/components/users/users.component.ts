@@ -7,6 +7,8 @@ import * as fromUser from "../../state/users.reducer";
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { UserModalComponent } from '../user-modal/user-modal.component';
+import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
+import form_template from '../../../models/add-form';
 
 @Component({
   selector: 'app-users',
@@ -14,24 +16,26 @@ import { UserModalComponent } from '../user-modal/user-modal.component';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
+  addFormType:string = 'currency' ;
   modalRef: BsModalRef;
   config = {
     backdrop: true,
     ignoreBackdropClick: false
   };
 
-  constructor(private store: Store<fromUser.AppState>, private modalService: BsModalService) { }
+  constructor(private store: Store<fromUser.AppState>, private modalService: BsModalService, private formBuilder: FormBuilder) { }
   users$: Observable<User[]>;
   showModal: boolean = false;
+
   ngOnInit() {
     this.getAllUsers();
   }
+
 
   getAllUsers() {
     this.store.dispatch(new userActions.LoadUsers());
     this.users$ = this.store.pipe(select(fromUser.getUsers));
   }
-
 
   // openModal() {
   //   this.showModal = true;

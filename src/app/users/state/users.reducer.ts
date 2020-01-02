@@ -35,7 +35,7 @@ export const initialState = userAdapter.getInitialState(defaultUser);
 //   initialState,
 // );
 
-export function userReducer(state: UserState = initialState, action: UsersAction.allAction):UserState {
+export function userReducer(state = initialState, action: UsersAction.allAction):UserState {
   switch (action.type) {
     case UsersAction.UsersActionTypes.LOAD_ALL_USERS_SUCCESS: {
       return userAdapter.addAll(action.payload, {

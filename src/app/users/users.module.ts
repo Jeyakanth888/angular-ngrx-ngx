@@ -10,6 +10,7 @@ import { EffectsModule, Actions } from '@ngrx/effects';
 import { userReducer } from "./state/users.reducer"
 import { UsersEffects} from './state/users.effects';
 import { UserModalComponent } from './components/user-modal/user-modal.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,7 +19,9 @@ import { UserModalComponent } from './components/user-modal/user-modal.component
     CommonModule,
     RouterModule.forChild(UserRoutes),
     StoreModule.forFeature("users",userReducer),
-    EffectsModule.forFeature([UsersEffects])
+    EffectsModule.forFeature([UsersEffects]),
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[UserModalComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]

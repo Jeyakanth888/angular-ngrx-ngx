@@ -3,8 +3,7 @@
         <button class="btn btn-primary add-btn" (click)="openModal()"><i class="fa fa-plus" aria-hidden="true"></i>
         </button>
     </div>
-    <app-user-card *ngFor = "let user of (users$ |async)" [userData]= "user" class="users-card"></app-user-card>
+    <app-user-card *ngFor="let user of (users$ |async)" [userData]="user" class="users-card"></app-user-card>
 </div>
 
- <app-user-model ></app-user-model> 
-
+<app-user-model [addFormType]="addFormType"></app-user-model>

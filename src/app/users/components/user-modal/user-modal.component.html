@@ -1,9 +1,28 @@
 <div class="modal-header">
-	<h4 class="modal-title pull-left"> {{ title }} </h4>
-	<button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
+    <h4 class="modal-title pull-left"> {{ title }} </h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
     </button>
 </div>
 <div class="modal-body">
-	This is a modal.
+    <form [formGroup]="myFormGroup" (ngSubmit)="onSubmit()">
+        <div *ngFor="let form_elem of formTemplate ">
+            <div [ngSwitch]="form_elem.type">
+                <div *ngSwitchCase="'textBox'">
+                    <input type="text" formControlName="{{form_elem.label}}" />
+                </div>
+                <div *ngSwitchCase="'number'">
+                    <input type="number" formControlName="{{form_elem.label}}" />
+                </div>
+                <div *ngSwitchCase="'select'">
+                    <select formControlName="{{form_elem.label}}">
+                        <option *ngFor="let opt of form_elem.options">
+                            {{opt}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="save" />
+    </form>
 </div>
