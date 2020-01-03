@@ -19,7 +19,7 @@ export class UsersEffects {
     mergeMap((action: UserActions.LoadUsers) =>
       this.UserService.getAllUsers().pipe(
         map(
-          (users: User[]) =>
+          (users: any) =>
             new UserActions.LoadUsersSuccess(users)
         ),
         catchError(err => of(new UserActions.LoadUsersFail(err)))

@@ -11,10 +11,11 @@ import { userReducer } from "./state/users.reducer"
 import { UsersEffects} from './state/users.effects';
 import { UserModalComponent } from './components/user-modal/user-modal.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserComponent } from './components/user/user.component';
 
 
 @NgModule({
-  declarations: [UsersComponent, UserCardComponent, UserModalComponent],
+  declarations: [UsersComponent, UserCardComponent, UserModalComponent, UserComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(UserRoutes),
@@ -23,7 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  exports:[UserModalComponent],
+  exports:[UserModalComponent, RouterModule],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 
